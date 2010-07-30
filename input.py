@@ -5,3 +5,5 @@ class FileRead(object):
 	def give(self, howMany):
 		return self.fileHandle.read(howMany)
 
+	def close(self):
+		self.fileHandle.close()
