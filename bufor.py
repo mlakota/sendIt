@@ -7,12 +7,12 @@ class bufor(object):
 	def run(self):
 		theList = []
 		while 1:
-			temp = input.give(howMany)
+			temp = self.input.give(self.howMany)
 			if not temp:
-				input.close()
-				output.close()
+				self.input.close()
+				self.output.close()
 				break
-			output.take(temp)
+			self.output.take(temp)
 
 
 	def close(self):
