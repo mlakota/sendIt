@@ -29,4 +29,14 @@ def send(source,bufor,dest):
 
 if __name__ == '__main__':
 	main('--source-file ala --bufor 1000000 --dest-file kot'.split())
-#	main('--source-gen 10032410 --bufor 1000000 --dest-file kot'.split())
+	main('--source-gen 7 --bufor 100 --dest-file kot'.split())
+	source = input.fileRead('ala')
+	dest = output.fileWrite('kot1')
+	dest2 = output.fileWrite('kot2')
+	dest3 = output.fileWrite('kot3')
+	bufor.bufor(source,
+		output.splitter(
+			dest,
+			output.splitter(dest2,dest3)
+		)
+	,1).run()
