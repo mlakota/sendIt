@@ -22,8 +22,6 @@ def send(source,bufor,dest):
 		plik2.write(temp)
 
 
-def gen(howMany):
-	pass
 
 
 if __name__ == '__main__':
