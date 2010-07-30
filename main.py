@@ -1,3 +1,7 @@
+import bufor
+import input
+import output
+
 def main(lista):
 	if lista[0] == '--source-file':
 		source = lista[1]
