@@ -5,12 +5,15 @@ import output
 def main(lista):
 	if lista[0] == '--source-file':
 		source = input.fileRead(lista[1])
-		if lista[2] == '--bufor':
-			if lista[4] == '--dest-file':
-				dest = output.fileWrite(lista[5])
-				bufor.bufor(source,dest,int(lista[3])).run()
+	elif lista[0] == '--source-gen':
+		source = input.genRead(int(lista[1]))
 	else:
 		raise RuntimeError("Unknown parameter:" + lista[0])
+
+	if lista[2] == '--bufor':
+		if lista[4] == '--dest-file':
+			dest = output.fileWrite(lista[5])
+			bufor.bufor(source,dest,int(lista[3])).run()
 
 def send(source,bufor,dest):
 	plik = open(source,"rb")
