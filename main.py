@@ -7,7 +7,8 @@ def main(lista):
 				dest = lista[5]
 				send(source,bufor,dest)
 	else:
-		raise RuntimeError(lista[0])
+		raise RuntimeError("Unknown parameter:" + lista[0])
+
 def send(source,bufor,dest):
 	plik = open(source,"rb")
 	plik2 = open(dest,"wb")
