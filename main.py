@@ -2,7 +2,7 @@ def main(lista):
 	if lista[0] == '--source-file':
 		source = lista[1]
 		if lista[2] == '--bufor':
-			bufor = lista[3]
+			bufor = int(lista[3])
 			if lista[4] == '--dest-file':
 				dest = lista[5]
 				send(source,bufor,dest)
