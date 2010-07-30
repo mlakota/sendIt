@@ -1,4 +1,4 @@
-class FileRead(object):
+class fileRead(object):
 	def __init__(self, fileName):
 		self.fileHandle = open(fileName,"rb")
 
