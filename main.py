@@ -25,4 +25,4 @@ def gen(howMany):
 
 if __name__ == '__main__':
 	main('--source-file ala --bufor 1000000 --dest-file kot'.split())
-	main('--source-gen 10032410 --bufor 1000000 --dest-file kot'.split())
+#	main('--source-gen 10032410 --bufor 1000000 --dest-file kot'.split())
