@@ -8,11 +8,14 @@ def main(lista):
 				send(source,bufor,dest)
 
 def send(source,bufor,dest):
-	plik = open(source)
+	plik = open(source,"rb")
+	plik2 = open(dest,"wb")
 	while 1:
 		temp = plik.read(bufor)
 		if not temp:
 			break
+		plik2.write(temp)
+
 
 
 
