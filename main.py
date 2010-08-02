@@ -3,17 +3,33 @@ import input
 import output
 
 def main(lista):
-	if lista[0] == '--source-file':
-		source = input.fileRead(lista[1])
-	elif lista[0] == '--source-gen':
-		source = input.genRead(int(lista[1]))
-	else:
-		raise RuntimeError("Unknown parameter:" + lista[0])
-
-	if lista[2] == '--bufor':
-		if lista[4] == '--dest-file':
-			dest = output.fileWrite(lista[5])
-			bufor.bufor(source,dest,int(lista[3])).run()
+	source = dest = bufSize = i = 0
+	while i<len(lista):
+		if not source:
+			if lista[i] == '--source-file':
+				source = input.fileRead(lista[i+1])
+				i+=2
+			elif lista[i] == '--source-gen':
+				source = input.genRead(int(lista[i+1]))
+				i+=2
+			else: raise RuntimeError("Unknown parameter:" + lista[i])
+		elif not bufSize:
+			if lista[i] == '--bufor':
+				bufSize = int(lista[i+1])
+				i+=2
+		elif not dest:
+			if lista[i] == '--dest-file':
+				dest = output.fileWrite(lista[i+1])
+				i+=2
+			elif lista[i] == '--path':
+				parse = __parsePath(lista[i+1],lista[i+2:])
+				if parse[0] is not None:
+					dest = parse[0]
+				else: raise RuntimeError('Bad parameter:'+lista[i+1])
+				i+=parse[1]
+		else:
+			break
+	bufor.bufor(source,dest,bufSize).run()
 
 def send(source,bufor,dest):
 	plik = open(source,"rb")
