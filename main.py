@@ -43,7 +43,7 @@ if __name__ == '__main__':
 			dest,
 			output.splitter(dest2,dest3)
 		)
-	,1).run()
+	,10000).run()
 	main('--source-gen 20 --bufor 203 --path'.split() + 
 		["%2s %f %3s %f %f %f"] + 
 		'kot1 kot2 kot3 kot4'.split())
