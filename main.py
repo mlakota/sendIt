@@ -78,11 +78,6 @@ if __name__ == '__main__':
 		)
 	,10000).run()
 	# test4: gen->splitter [using cmdLine]
-	#main('--source-gen 20 --bufor 203 --path'.split() + 
-	#	["%2s %f %3s %f %f %f"] + 
-	#	'kot4 kot5 kot6 kot7'.split())
-
-	# test 4a: file->file [cmdLine]
-	main('--source-file ala --bufor 40 --path'.split() +
-		["%2s %f"] +
-		'kot4a'.split())
+	main('--source-gen 20 --bufor 203 --path'.split() +
+		["%2s %f %3s %f %f %f"] +
+		'kot4 kot5 kot6 kot7'.split())
