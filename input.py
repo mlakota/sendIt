@@ -25,3 +25,8 @@ class genRead(object):
 
 	def close(self):
 		pass
+
+	def __str__(self):
+		return "genRead: size "+str(self.howMany)
+
+	__repr__ = __str__
