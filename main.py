@@ -25,6 +25,8 @@ def send(source,bufor,dest):
 		plik2.write(temp)
 
 
+def __parsePath(path):
+	pass
 
 
 if __name__ == '__main__':
@@ -40,3 +42,5 @@ if __name__ == '__main__':
 			output.splitter(dest2,dest3)
 		)
 	,1).run()
+	main('''--source-gen 20 --bufor 203 --path "%2s %f %3s %f %f %f" 
+	kot1 kot2 kot3 kot4''')
