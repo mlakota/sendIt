@@ -51,8 +51,15 @@ def __parseElem(path, args):
 		return output.fileWrite(args[0]),1,1
 	elif current[0] == '%' and current[len(current)-1]=='s':
 		howMany = int(current[1:len(current)-1])
-		print "HOWMANY:",howMany
-		return 0,0,0
+		posE = 1
+		posA = 0
+		elems = []
+		for i in range(howMany):
+			cur = __parseElem(path[posE:],args[posA:])
+			elems.append(cur[0])
+			posE += cur[1]
+			posA += cur[2]
+		return output.splitter(elems),posE,posA
 
 if __name__ == '__main__':
 	# test1: file->file (local)
