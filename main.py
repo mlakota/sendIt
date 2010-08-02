@@ -33,7 +33,7 @@ def __parseElem(path, args):
 
 if __name__ == '__main__':
 	main('--source-file ala --bufor 1000000 --dest-file kot'.split())
-	main('--source-gen 7 --bufor 100 --dest-file kot'.split())
+	main('--source-gen 7 --bufor 100 --dest-file kot0'.split())
 	source = input.fileRead('ala')
 	dest = output.fileWrite('kot1')
 	dest2 = output.fileWrite('kot2')
