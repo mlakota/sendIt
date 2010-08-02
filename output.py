@@ -16,7 +16,10 @@ class fileWrite(object):
 
 class splitter(object):
 	def __init__(self, *args):
-		self.ways = list(args)
+		if isinstance(args[0],list):
+			self.ways = list(args[0])
+		else:
+			self.ways = list(args)
 
 	def take(self, data):
 		for i in self.ways:
