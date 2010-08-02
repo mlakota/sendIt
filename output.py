@@ -9,7 +9,7 @@ class fileWrite(object):
 		self.fileHandle.close()
 
 	def __str__(self):
-		return self.fileHandle.name
+		return "fileWrite:"+str(self.fileHandle.name)
 
 	__repr__ = __str__
 
@@ -27,7 +27,7 @@ class splitter(object):
 			i.close()
 
 	def __str__(self):
-		aList = ['splt(']
+		aList = ['splitter(']
 		for i in self.ways:
 			aList.append(str(i))
 			aList.append(',')
