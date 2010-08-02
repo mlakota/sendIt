@@ -9,14 +9,13 @@ class fileWrite(object):
 		self.fileHandle.close()
 
 class splitter(object):
-	def __init__(self, a, b):
-		self.a = a
-		self.b = b
+	def __init__(self, *args):
+		self.ways = list(args)
 
 	def take(self, data):
-		self.a.take(data)
-		self.b.take(data)
+		for i in self.ways:
+			i.take(data)
 
 	def close(self):
-		self.a.close()
-		self.b.close()
+		for i in self.ways:
+			i.close()
