@@ -8,6 +8,10 @@ class fileRead(object):
 	def close(self):
 		self.fileHandle.close()
 
+	def __str__(self):
+		return "fileRead: "+str(self.fileHandle.name)
+
+	__repr__ = __str__
 
 
 class genRead(object):
