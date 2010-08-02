@@ -49,6 +49,10 @@ def __parseElem(path, args):
 	current = path[0]
 	if current == '%f':
 		return output.fileWrite(args[0]),1,1
+	elif current[0] == '%' and current[len(current)-1]=='s':
+		howMany = int(current[1:len(current)-1])
+		print "HOWMANY:",howMany
+		return 0,0,0
 
 if __name__ == '__main__':
 	# test1: file->file (local)
@@ -73,5 +77,5 @@ if __name__ == '__main__':
 
 	# test 4a: file->file [cmdLine]
 	main('--source-file ala --bufor 40 --path'.split() +
-		["%f"] +
+		["%2s %f"] +
 		'kot4a'.split())
