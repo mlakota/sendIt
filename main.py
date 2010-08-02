@@ -46,7 +46,9 @@ def __parsePath(path, args):
 	return __parseElem(path, args)
 
 def __parseElem(path, args):
-	pass
+	current = path[0]
+	if current == '%f':
+		return output.fileWrite(args[0]),1,1
 
 if __name__ == '__main__':
 	# test1: file->file (local)
