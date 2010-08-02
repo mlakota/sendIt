@@ -42,7 +42,8 @@ def send(source,bufor,dest):
 
 
 def __parsePath(path, args):
-	pass
+	path = path.split()
+	return __parseElem(path, args)
 
 def __parseElem(path, args):
 	pass
