@@ -25,3 +25,15 @@ class splitter(object):
 	def close(self):
 		for i in self.ways:
 			i.close()
+
+	def __str__(self):
+		aList = ['splt(']
+		for i in self.ways:
+			aList.append(str(i))
+			aList.append(',')
+		aList.pop()
+		aList.append(')')
+		from string import join
+		return join(aList)
+
+	__repr__ = __str__
