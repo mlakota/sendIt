@@ -25,9 +25,11 @@ def send(source,bufor,dest):
 		plik2.write(temp)
 
 
-def __parsePath(path):
+def __parsePath(path, args):
 	pass
 
+def __parseElem(path, args):
+	pass
 
 if __name__ == '__main__':
 	main('--source-file ala --bufor 1000000 --dest-file kot'.split())
