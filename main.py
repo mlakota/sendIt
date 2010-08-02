@@ -32,8 +32,11 @@ def __parseElem(path, args):
 	pass
 
 if __name__ == '__main__':
+	# test1: file->file (local)
 	main('--source-file ala --bufor 1000000 --dest-file kot'.split())
+	# test2: gen->file (local)
 	main('--source-gen 7 --bufor 100 --dest-file kot0'.split())
+	# test3: file->splitter [without cmdLine]
 	source = input.fileRead('ala')
 	dest = output.fileWrite('kot1')
 	dest2 = output.fileWrite('kot2')
@@ -44,6 +47,7 @@ if __name__ == '__main__':
 			output.splitter(dest2,dest3)
 		)
 	,10000).run()
+	# test4: gen->splitter [using cmdLine]
 	main('--source-gen 20 --bufor 203 --path'.split() + 
 		["%2s %f %3s %f %f %f"] + 
-		'kot1 kot2 kot3 kot4'.split())
+		'kot4 kot5 kot6 kot7'.split())
