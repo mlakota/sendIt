@@ -14,6 +14,5 @@ class bufor(object):
 				break
 			self.output.take(temp)
 
-
 	def close(self):
 		self.fileHandle.close()
