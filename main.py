@@ -4,7 +4,7 @@ import output
 
 def main(lista):
 	source = dest = bufSize = i = 0
-	while i<len(lista):
+	while i < len(lista):
 		if not source:
 			if lista[i] == '--source-file':
 				source = input.fileRead(lista[i+1])
